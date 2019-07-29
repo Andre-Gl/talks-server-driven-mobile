@@ -1,0 +1,242 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="node_modules/reveal.js/css/reset.css">
+		<link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="node_modules/reveal.js/css/theme/black.css">
+    <!-- style overrides -->
+    <link rel="stylesheet" href="css/styles.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="node_modules/reveal.js/lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+          <h2>Server-driven UI for mobile apps</h2>
+          <p><em>Or</em></p>
+          <p><em>What's next for cross platform mobile development?</em></p>
+        </section>
+				<section>
+          <section>
+            <h3>About me</h3>
+            <p><strike>Software Engineer @Google</strike></p>
+            <p>Software Engineer @Facebook</p>
+          </section>
+          <section>
+            <img class="icon" width="300px" data-src="img/mobile-frame-inv.png">
+            <img class="icon" width="300px" data-src="img/laptop-frame-inv.png">
+          </section>
+          <section>
+            <span class="ig-img">
+              <span class="header"></span>
+              <img width="300px" data-src="img/me-2.jpg">
+              <small class="footer">&#9825;</small>
+            </span>
+            <span class="ig-img">
+              <span class="header"></span>
+              <img width="300px" data-src="img/me-0.jpg">
+              <small class="footer">&#9825;</small>
+            </span>
+            <span class="ig-img">
+              <span class="header"></span>
+              <img width="300px" data-src="img/me-1.jpg">
+              <small class="footer">&#9825;</small>
+            </span>
+          </section>
+        </section>
+        <section>
+          <h2>Problems statement</h2>
+          <em>What are we trying to solve?</em>
+        </section>
+        <section>
+          <h3>Speed of development</h3>
+          <section>
+            <h4>New client release</h4>
+            <img class="icon" width="900px" data-src="img/calendar-native-dev.jpg">
+          </section>
+          <section>
+            <h4>New server release</h4>
+            <img class="icon" width="900px" data-src="img/calendar-server-dev.jpg">
+          </section>
+          <section>
+            <h4>What else?</h4>
+            <ul>
+              <li>Server update to support new feature</li>
+              <li>Client update to support new feature</li>
+              <li>Server gating based on client version</li>
+              <li>Fallback code for unsupported clients</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Platforms</h4>
+            <img class="icon" width="100px" data-src="img/apple-logo.svg">
+            <img class="icon" width="100px" data-src="img/android-logo.svg">
+          </section>
+        </section>
+        <section>
+          <h3>Release cycles</h3>
+          <section>
+            <h4>Live versions</h4>
+          </section>
+          <section>
+            <img class="icon" width="800px" data-src="img/android-app-versions.png">
+          </section>
+          <section>
+            <h4>Devices with app version older than 1 year</h4>
+            <table>
+              <tbody>
+                <tr>
+                  <td width="33%">
+                    <h3>1.5% - 2%</h3>
+                  </td>
+                  <td width="33%">
+                    <h3>40% - 42%</h3>
+                  </td>
+                  <td width="33%">
+                    <h3>90%</h3>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    North America and Europe
+                  </td>
+                  <td>
+                    Africa and South Asia
+                  </td>
+                  <td>
+                    Ethiopia
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+        <section>
+          <h3>Experimentation</h3>
+          <section>
+            <img class="icon" width="600px" data-src="img/feed-item-ad.png">
+          </section>
+          <section>
+            <h4>Text</h4>
+            <pre><code data-trim class="hljs vim">
+              compact_cta_video_item.proto
+            </code></pre>
+            <pre><code data-trim>
+              icon: '!icon-url!',
+              title: 'letgo: Buy & Sell Used Stuff',
+              ...
+              button {
+                text: 'Install',// 'Get'
+              }
+              ...
+            </code></pre>
+          </section>
+          <section>
+            <h4>Button Style</h4>
+            <pre><code data-trim class="hljs vim">
+              compact_cta_video_item.proto
+            </code></pre>
+            <pre><code data-trim>
+              ...
+              icon: '!icon-url!',
+              title: 'letgo: Buy & Sell Used Stuff',
+              ...
+              button {
+                text: 'Install',
+                font_family: 'roboto',
+                font_size: '14dp',
+                border_width: '1dp',
+                border_color: '#XXXXXX',
+              }
+              ...
+            </code></pre>
+          </section>
+          <section>
+            <h4>Layouts</h4>
+            <pre><code data-trim>
+            ...
+            icon: '!icon-url!',
+            title: 'letgo: Buy & Sell Used Stuff',
+            ...
+            right_aligned_cta_button_renderer: {
+              button {
+                text: 'Install',
+                font_family: 'roboto',
+                font_size: '14dp',
+                border_width: '1dp',
+                border_color: '#XXXXXX',
+              }
+            }
+            ...
+            </code></pre>
+          </section>
+          <section>
+            <h4>More Layouts</h4>
+            <img class="icon" width="900px" data-src="img/feed-ads.png">
+          </<section>
+          </section>
+          <section>
+            <h4>More Layouts</h4>
+            <pre><code data-trim class="hljs vim">
+              compact_cta_video_item.proto
+            </code></pre>
+            <pre><code data-trim class="hljs vim">
+              tall_cta_video_item.proto
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h3>Solutions</h3>
+          <section>
+            <img class="icon" width="300px" data-src="img/react-native-logo.svg">
+            <img class="icon" width="300px" data-src="img/flutter-logo.svg">
+          </section>
+        </section>
+        <section>
+          <img width="900px" data-src="img/apple-policy.png">
+        </section>
+			</div>
+		</div>
+
+		<script src="node_modules/reveal.js/js/reveal.js"></script>
+
+		<script>
+      Reveal.initialize({
+      	dependencies: [
+      		// Interpret Markdown in <section> elements
+      		{ src: 'node_modules/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      		{ src: 'node_modules/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+      		// Syntax highlight for <code> elements
+      		{ src: 'node_modules/reveal.js/plugin/highlight/highlight.js', async: true },
+
+      		// Zoom in and out with Alt+click
+      		{ src: 'node_modules/reveal.js/plugin/zoom-js/zoom.js', async: true },
+
+      		// Speaker notes
+      		{ src: 'node_modules/reveal.js/plugin/notes/notes.js', async: true },
+
+      		// MathJax
+      		{ src: 'node_modules/reveal.js/plugin/math/math.js', async: true }
+      	]
+      });
+		</script>
+	</body>
+</html>
