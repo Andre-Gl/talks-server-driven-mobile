@@ -35,17 +35,25 @@
 				<section>
           <section>
             <h3>About me</h3>
-            <p><strike>Software Engineer @Google</strike></p>
-            <p>Software Engineer @Facebook</p>
           </section>
           <section>
-            <img class="icon" width="300px" data-src="img/mobile-frame-inv.png">
-            <img class="icon" width="300px" data-src="img/laptop-frame-inv.png">
+            <img width="600px" data-src="img/money.jpg">
           </section>
           <section>
             <span class="ig-img">
               <span class="header"></span>
-              <img width="300px" data-src="img/me-2.jpg">
+              <img width="400px" data-src="img/me-2.jpg">
+              <small class="footer">&#9825;</small>
+            </span>
+          </section>
+          <section>
+            <p><strike>Software Engineer @Google</strike></p>
+            <p>Software Engineer @Facebook</p>
+          </section>
+          <section>
+            <span class="ig-img">
+              <span class="header"></span>
+              <img width="300px" data-src="img/me-4.jpg">
               <small class="footer">&#9825;</small>
             </span>
             <span class="ig-img">
@@ -59,13 +67,28 @@
               <small class="footer">&#9825;</small>
             </span>
           </section>
+          <section>
+            <img class="icon" width="300px" data-src="img/mobile-frame-inv.png">
+            <img class="icon" width="300px" data-src="img/laptop-frame-inv.png">
+          </section>
         </section>
         <section>
           <h2>Problems statement</h2>
           <em>What are we trying to solve?</em>
         </section>
         <section>
-          <h3>Speed of development</h3>
+          <section>
+            <h3>Speed of development</h3>
+          </section>
+          <section>
+            <h4>What is "add new feature"?</h4>
+            <ul>
+              <li class="fragment">Client update to support new feature</li>
+              <li class="fragment">Server update to support new feature</li>
+              <li class="fragment">Server gating based on client version</li>
+              <li class="fragment">Fallback code for unsupported clients</li>
+            </ul>
+          </section>
           <section>
             <h4>New client release</h4>
             <img class="icon" width="900px" data-src="img/calendar-native-dev.jpg">
@@ -75,24 +98,14 @@
             <img class="icon" width="900px" data-src="img/calendar-server-dev.jpg">
           </section>
           <section>
-            <h4>What else?</h4>
-            <ul>
-              <li>Server update to support new feature</li>
-              <li>Client update to support new feature</li>
-              <li>Server gating based on client version</li>
-              <li>Fallback code for unsupported clients</li>
-            </ul>
-          </section>
-          <section>
             <h4>Platforms</h4>
             <img class="icon" width="100px" data-src="img/apple-logo.svg">
             <img class="icon" width="100px" data-src="img/android-logo.svg">
           </section>
         </section>
         <section>
-          <h3>Release cycles</h3>
           <section>
-            <h4>Live versions</h4>
+            <h3>Live versions</h3>
           </section>
           <section>
             <img class="icon" width="800px" data-src="img/android-app-versions.png">
@@ -128,7 +141,9 @@
           </section>
         </section>
         <section>
-          <h3>Experimentation</h3>
+          <section>
+            <h3>Experimentation</h3>
+          </section>
           <section>
             <img class="icon" width="600px" data-src="img/feed-item-ad.png">
           </section>
@@ -200,6 +215,34 @@
               tall_cta_video_item.proto
             </code></pre>
           </section>
+          <section>
+            <ul>
+              <li>It is data transport</li>
+              <li>All clients need to speak new language</li>
+              <li>How many variations will you have?</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Airbnb experience</h4>
+            <img class="icon pull-right" width="200px" data-src="img/airbnb-example.png">
+            <pre><code data-trim class="hljs">
+                type: 'place',
+                id: 123,
+                rows: [{
+                  type: 'row:carousel',
+                  images_urls: ['!photo-url!'],
+                }, {
+                  type: 'row:title',
+                  title: 'Sigthglass Coffee',
+                }, {
+                  type: 'row:actions',
+                  actions: [/* */],
+                }, {
+                  type: 'row:map',
+                  address: '600 Main Street',
+                }]
+            </code></pre>
+          </section>
         </section>
 
         <section>
@@ -217,8 +260,30 @@
             <em><a href="https://medium.com/@vinod8812/integrate-codepush-with-react-native-for-over-the-air-app-update-bb200683a173">thanks to author @Medium</a></em>
           </section>
           <section>
-            <img width="900px" data-src="img/apple-policy.png">
+            <ul>
+              <li>2 applications are running at the same time</li>
+              <li>Whole applicaiton changes to update single view</li>
+              <li>Leaking code</li>
+              <li>Complicated infra to support OTA</li>
+            </ul>
           </section>
+        </section>
+        <section>
+          <img width="900px" data-src="img/xkcd_system.jpg">
+        </section>
+        <section>
+          <section>
+            <h3>Server-Driven UI</h3>
+            <img class="icon" width="300px" height="300px" data-src="img/litho-logo.png">
+            <img class="icon" width="300px" height="300px" data-src="img/texture-logo.svg">
+          </section>
+        </section>
+        <section>
+          <img class="icon" width="300px" data-src="img/netscape-logo.png">
+        </section>
+        <section>
+          <h3>Is this legal?</h3>
+          <img width="900px" data-src="img/apple-policy.png">
         </section>
 			</div>
 		</div>
