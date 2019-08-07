@@ -277,6 +277,33 @@
             <img class="icon" width="300px" height="300px" data-src="img/litho-logo.png">
             <img class="icon" width="300px" height="300px" data-src="img/texture-logo.svg">
           </section>
+          <section>
+            <pre><code data-trim class="hljs">
+              @LayoutSpec
+              class MyComponentSpec {
+
+                @OnCreateLayout
+                static Component onCreateLayout(
+                    ComponentContext c,
+                    @Prop int color,
+                    @Prop String title) {
+                      Text.create(c)
+                        .text(title)
+                        .textColor(color))
+                        .build();
+                }
+              }
+            </code></pre>
+          </section>
+          <section>
+            <pre><code data-trim class="hljs">
+              final Component component = MyComponent.create(componentContext)
+                .title("My title")
+                .color(16777215)
+                .build();
+              LithoView view = LithoView.create(context, component);
+            </code></pre>
+          </section>
         </section>
         <section>
           <img class="icon" width="300px" data-src="img/netscape-logo.png">
@@ -284,6 +311,9 @@
         <section>
           <h3>Is this legal?</h3>
           <img width="900px" data-src="img/apple-policy.png">
+        </section>
+        <section>
+          <img width="900px" data-src="img/xkcd_standards.jpg">
         </section>
 			</div>
 		</div>
