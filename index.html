@@ -73,6 +73,13 @@
           </section>
         </section>
         <section>
+          <p>Concepts and thoughts expressed in this talk do not represent official position of Google or Facebook.</p>
+          <p>This presentation is based on information available publicly.</p>
+        </section>
+        <section>
+          <img class="icon" width="800px" data-src="img/hacker-news.jpg">
+        </section>
+        <section>
           <h2>Problems statement</h2>
           <em>What are we trying to solve?</em>
         </section>
@@ -133,7 +140,7 @@
                     Africa and South Asia
                   </td>
                   <td>
-                    Ethiopia
+                    Specific African Countries
                   </td>
                 </tr>
               </tbody>
@@ -184,12 +191,15 @@
           </section>
           <section>
             <h4>Layouts</h4>
+            <pre><code data-trim class="hljs vim">
+              compact_cta_video_item.proto
+            </code></pre>
             <pre><code data-trim>
             ...
             icon: '!icon-url!',
             title: 'letgo: Buy & Sell Used Stuff',
             ...
-            right_aligned_cta_button_renderer: {
+            right_aligned_cta_button_renderer {
               button {
                 text: 'Install',
                 font_family: 'roboto',
@@ -239,19 +249,32 @@
                   actions: [/* */],
                 }, {
                   type: 'row:map',
-                  address: '600 Main Street',
+                  address: 'Sigthglass Coffee, 270 7th Street',
                 }]
             </code></pre>
           </section>
         </section>
 
         <section>
-          <h3>Solutions</h3>
-          <img class="icon" width="300px" data-src="img/react-native-logo.svg">
-          <img class="icon" width="300px" data-src="img/flutter-logo.svg">
+          <section>
+            <h3>Solutions</h3>
+          </section>
+          <section>
+            <img class="icon" width="300px" data-src="img/react-native-logo.svg">
+            <img class="icon" width="300px" data-src="img/flutter-logo.svg">
+            <p>
+              <a href="https://facebook.github.io/react-native/">React Native</a> |
+              <a href="https://flutter.dev/">flutter.dev</a>
+            </p>
+          </section>
         </section>
         <section>
-          <h3>React native</h3>
+          <section>
+            <img class="icon" width="300px" data-src="img/react-native-logo.svg">
+            <p>
+              <a href="https://facebook.github.io/react-native/">React Native</a>
+            </p>
+          </section>
           <section>
             <img class="icon" width="600px" data-src="img/react-native-code.png">
           </section>
@@ -274,10 +297,75 @@
         <section>
           <section>
             <h3>Server-Driven UI</h3>
-            <img class="icon" width="300px" height="300px" data-src="img/litho-logo.png">
-            <img class="icon" width="300px" height="300px" data-src="img/texture-logo.svg">
           </section>
           <section>
+            <img class="icon" width="600px" data-src="img/feed-item-ad-outlined.png">
+          </section>
+          <section>
+            <pre><code data-trim class="hljs vim">
+              compact_cta_video_item.proto
+            </code></pre>
+            <pre><code data-trim>
+            container {
+              flex_direction: 'row'
+              children [{
+                image {
+                  url: '!icon-url!'
+                }
+              }, {
+                container {
+                  flex_grow: 1
+                  children [...]
+                }
+              }]
+            }
+            </code></pre>
+          </section>
+          <section>
+            <pre><code data-trim class="hljs vim">
+              compact_cta_video_item.proto
+            </code></pre>
+            <pre><code data-trim>
+            container {
+              flex_grow: 1
+              flex_direction: 'column'
+              children [{
+                text {
+                  content: 'letgo: Buy & Sell Used Stuff'
+                }
+                ...
+              }, {
+                text {
+                  content: 'Install'
+                }
+              }]
+            }
+            </code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>Declarative UI</h3>
+            <h4>and Flexbox laouts</h4>
+          </section>
+          <section>
+            <img class="icon" width="300px" height="300px" data-src="img/litho-logo.png">
+            <img class="icon" width="300px" height="300px" data-src="img/texture-logo.svg">
+            <p>
+              <a href="https://fblitho.com/">fblitho.com</a> |
+              <a href="https://texturegroup.org">texturegroup.org</a>
+            </p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <img class="icon" width="300px" height="300px" data-src="img/litho-logo.png">
+            <p>
+              <a href="https://fblitho.com/">fblitho.com</a>
+            </p>
+          </section>
+          <section>
+            <h4>Writing Components</h4>
             <pre><code data-trim class="hljs">
               @LayoutSpec
               class MyComponentSpec {
@@ -296,6 +384,7 @@
             </code></pre>
           </section>
           <section>
+            <h4>Using Components</h4>
             <pre><code data-trim class="hljs">
               final Component component = MyComponent.create(componentContext)
                 .title("My title")
@@ -304,16 +393,86 @@
               LithoView view = LithoView.create(context, component);
             </code></pre>
           </section>
+          <section>
+            <h4>Flexbox Layouts</h4>
+            <pre><code data-trim class="hljs">
+              Row.create(c)
+                .child(
+                  SolidColor.create(c)
+                    .color(RED)
+                    .flexGrow(1))
+                .child(
+                  SolidColor.create(c)
+                    .color(BLUE)
+                    .flexGrow(1))
+              .build();
+            </code></pre>
+          </section>
+          <section>
+            <ul>
+              <li>Very intuitive flexbox layout</li>
+              <li>Efficient rendering with tree diffing</li>
+              <li>Async rendering on UI thread</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>Pors & Cons</h3>
+          </section>
+          <section>
+            <p>Everything we wanted from SSR...</p>
+            <ul>
+              <li class="fragment">Fast first paint</li>
+              <li class="fragment">Easy experiments</li>
+              <li class="fragment">Easy gating</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Testing</h4>
+          </section>
+          <section>
+            <img class="icon" width="800px" data-src="img/DIFF-screenshot.jpg">
+          </section>
+          <section>
+            <img class="icon" width="800px" data-src="img/DIFF-visual-screenshot.jpg">
+          </section>
+          <section>
+            <p>Everything we didn't want from SSR...</p>
+            <ul>
+              <li class="fragment">Slow subsequent paint</li>
+              <li class="fragment">Animations?</li>
+              <li class="fragment">No offline support</li>
+            </ul>
+          </section>
+          <section>
+            <img class="icon" width="600px" data-src="img/http-meme.jpg">
+          </section>
         </section>
         <section>
           <img class="icon" width="300px" data-src="img/netscape-logo.png">
+          <p>
+            <a href="https://ru.wikipedia.org/wiki/Netscape_Navigator">Netscape?</a>
+          </p>
         </section>
         <section>
           <h3>Is this legal?</h3>
           <img width="900px" data-src="img/apple-policy.png">
         </section>
-        <section>
+        <!-- <section>
           <img width="900px" data-src="img/xkcd_standards.jpg">
+        </section> -->
+        <!-- <section>
+          <img width="600px" data-src="img/new-framework-meme.jpg">
+        </section> -->
+        <section>
+          <p>Huge thank you to the organizers for the opportunity to present to all of you!</p>
+        </section>
+        <section>
+          <h3>QA</h3>
+        </section>
+        <section>
+          <q>Ваши идеи бесполезны, если вы не воплощаете их в жизнь.</q>
         </section>
 			</div>
 		</div>
