@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Server-Driven UI</title>
 
 		<link rel="stylesheet" href="node_modules/reveal.js/css/reset.css">
 		<link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
@@ -28,9 +28,9 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-          <h2>Server-driven UI for mobile apps</h2>
+          <h2>Server-driven UI for mobile</h2>
           <p><em>Or</em></p>
-          <p><em>What's next for cross platform mobile development?</em></p>
+          <p><em>What's next for cross-platform mobile development?</em></p>
         </section>
 				<section>
           <section>
@@ -74,7 +74,6 @@
         </section>
         <section>
           <p>Concepts and thoughts expressed in this talk do not represent official position of Google or Facebook.</p>
-          <p>This presentation is based on information available publicly.</p>
         </section>
         <section>
           <img class="icon" width="800px" data-src="img/hacker-news.jpg">
@@ -99,10 +98,6 @@
           <section>
             <h4>New client release</h4>
             <img class="icon" width="900px" data-src="img/calendar-native-dev.jpg">
-          </section>
-          <section>
-            <h4>New server release</h4>
-            <img class="icon" width="900px" data-src="img/calendar-server-dev.jpg">
           </section>
           <section>
             <h4>Platforms</h4>
@@ -184,7 +179,7 @@
                 font_family: 'roboto',
                 font_size: '14dp',
                 border_width: '1dp',
-                border_color: '#XXXXXX',
+                border_color: 16777215,
               }
               ...
             </code></pre>
@@ -205,7 +200,7 @@
                 font_family: 'roboto',
                 font_size: '14dp',
                 border_width: '1dp',
-                border_color: '#XXXXXX',
+                border_color: 16777215,
               }
             }
             ...
@@ -306,19 +301,19 @@
               compact_cta_video_item.proto
             </code></pre>
             <pre><code data-trim>
-            container {
-              flex_direction: 'row'
-              children [{
-                image {
-                  url: '!icon-url!'
-                }
-              }, {
-                container {
-                  flex_grow: 1
-                  children [...]
-                }
-              }]
-            }
+              container {
+                flex_direction: 'row'
+                children [{
+                  image {
+                    url: '!icon-url!'
+                  }
+                }, {
+                  container {
+                    flex_grow: 1
+                    children [...]
+                  }
+                }]
+              }
             </code></pre>
           </section>
           <section>
@@ -326,27 +321,29 @@
               compact_cta_video_item.proto
             </code></pre>
             <pre><code data-trim>
-            container {
-              flex_grow: 1
-              flex_direction: 'column'
-              children [{
-                text {
-                  content: 'letgo: Buy & Sell Used Stuff'
-                }
-                ...
-              }, {
-                text {
-                  content: 'Install'
-                }
-              }]
-            }
+              ...
+              container {
+                flex_grow: 1
+                flex_direction: 'column'
+                children [{
+                  text {
+                    content: 'letgo: Buy & Sell Used Stuff'
+                  }
+                  ...
+                }, {
+                  text {
+                    content: 'Install'
+                  }
+                }]
+              }
+              ...
             </code></pre>
           </section>
         </section>
         <section>
           <section>
             <h3>Declarative UI</h3>
-            <h4>and Flexbox laouts</h4>
+            <h4>and Flexbox layouts</h4>
           </section>
           <section>
             <img class="icon" width="300px" height="300px" data-src="img/litho-logo.png">
@@ -384,13 +381,37 @@
             </code></pre>
           </section>
           <section>
+            <h4>Mount Native view/drawable</h4>
+            <pre><code data-trim class="hljs">
+              @MountSpec
+              public class ColorComponentSpec {
+
+                @OnCreateMountContent
+                static ColorDrawable onCreateMountContent(Context c) {
+                  return new ColorDrawable();
+                }
+
+                @OnMount
+                static void onMount(
+                    ComponentContext context,
+                    ColorDrawable colorDrawable,
+                    @Prop int color) {
+                  colorDrawable.setColor(color);
+                }
+              }
+            </code></pre>
+          </section>
+          <section>
             <h4>Using Components</h4>
             <pre><code data-trim class="hljs">
-              final Component component = MyComponent.create(componentContext)
+              final ComponentContext componentContext =
+                new ComponentContext(this);
+              final Component component =
+                MyComponent.create(componentContext)
                 .title("My title")
                 .color(16777215)
                 .build();
-              LithoView view = LithoView.create(context, component);
+              LithoView view = LithoView.create(this, component);
             </code></pre>
           </section>
           <section>
@@ -419,6 +440,10 @@
         <section>
           <section>
             <h3>Pors & Cons</h3>
+          </section>
+          <section>
+            <h4>New server release</h4>
+            <img class="icon" width="900px" data-src="img/calendar-server-dev.jpg">
           </section>
           <section>
             <p>Everything we wanted from SSR...</p>
@@ -466,10 +491,10 @@
           <img width="600px" data-src="img/new-framework-meme.jpg">
         </section> -->
         <section>
-          <p>Huge thank you to the organizers for the opportunity to present to all of you!</p>
+          <p>Thanks for having me!</p>
         </section>
         <section>
-          <h3>QA</h3>
+          <p>Please, ask me questions :)</p>
         </section>
         <section>
           <q>Ваши идеи бесполезны, если вы не воплощаете их в жизнь.</q>
