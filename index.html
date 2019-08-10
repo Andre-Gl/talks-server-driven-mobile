@@ -27,6 +27,9 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+        <section>
+          <img class="icon" width="400px" data-src="img/rs-logo.svg">
+        </section>
 				<section>
           <h2>Server-driven UI for mobile</h2>
           <p><em>Or</em></p>
@@ -258,8 +261,11 @@
             <img class="icon" width="300px" data-src="img/react-native-logo.svg">
             <img class="icon" width="300px" data-src="img/flutter-logo.svg">
             <p>
-              <a href="https://facebook.github.io/react-native/">React Native</a> |
-              <a href="https://flutter.dev/">flutter.dev</a>
+              React Native* | Flutter*
+            </p>
+            <p>
+              <small><a href="https://facebook.github.io/react-native/">facebook.github.io/react-native/</a></small><br />
+              <small><a href="https://flutter.dev/">flutter.dev</a></small>
             </p>
           </section>
         </section>
@@ -267,7 +273,10 @@
           <section>
             <img class="icon" width="300px" data-src="img/react-native-logo.svg">
             <p>
-              <a href="https://facebook.github.io/react-native/">React Native</a>
+              React Native*
+            </p>
+            <p>
+              <small><a href="https://facebook.github.io/react-native/">facebook.github.io/react-native/</a></small>
             </p>
           </section>
           <section>
@@ -279,10 +288,10 @@
           </section>
           <section>
             <ul>
-              <li>2 applications are running at the same time</li>
-              <li>Whole applicaiton changes to update single view</li>
-              <li>Leaking code</li>
-              <li>Complicated infra to support OTA</li>
+              <li class="fragment">2 applications are running at the same time</li>
+              <li class="fragment">Whole applicaiton changes to update single view</li>
+              <li class="fragment">Leaking code</li>
+              <li class="fragment">Complicated infra to support OTA</li>
             </ul>
           </section>
         </section>
@@ -290,9 +299,15 @@
           <img width="900px" data-src="img/xkcd_system.jpg">
         </section>
         <section>
-          <section>
-            <h3>Server-Driven UI</h3>
-          </section>
+          <h3>Server-Driven UI</h3>
+        </section>
+        <section>
+          <ul>
+            <li><p class="fragment highlight-red">Server-side Layout</p></li>
+            <li><p>Client code</p></li>
+          </ul>
+        </section>
+        <section>
           <section>
             <img class="icon" width="600px" data-src="img/feed-item-ad-outlined.png">
           </section>
@@ -341,24 +356,30 @@
           </section>
         </section>
         <section>
-          <section>
-            <h3>Declarative UI</h3>
-            <h4>and Flexbox layouts</h4>
-          </section>
+          <ul>
+            <li><p>Server-side Layout</p></li>
+            <li><p class="fragment highlight-red">Client code</p></li>
+          </ul>
+        </section>
+        <section>
           <section>
             <img class="icon" width="300px" height="300px" data-src="img/litho-logo.png">
             <img class="icon" width="300px" height="300px" data-src="img/texture-logo.svg">
             <p>
-              <a href="https://fblitho.com/">fblitho.com</a> |
-              <a href="https://texturegroup.org">texturegroup.org</a>
+              Litho* | Texture*
+            </p>
+            <p>
+              <small><a href="https://fblitho.com">fblitho.com</a></small><br/>
+              <small><a href="https://texturegroup.org">texturegroup.org</a></small>
             </p>
           </section>
         </section>
         <section>
           <section>
             <img class="icon" width="300px" height="300px" data-src="img/litho-logo.png">
+            <p>Litho*</p>
             <p>
-              <a href="https://fblitho.com/">fblitho.com</a>
+              <small><a href="https://fblitho.com/">fblitho.com</a></small>
             </p>
           </section>
           <section>
@@ -431,9 +452,10 @@
           </section>
           <section>
             <ul>
-              <li>Very intuitive flexbox layout</li>
-              <li>Efficient rendering with tree diffing</li>
-              <li>Async rendering on UI thread</li>
+              <li class="fragment">Declarative</li>
+              <li class="fragment">Very intuitive flexbox layout</li>
+              <li class="fragment">Efficient rendering with tree diffing</li>
+              <li class="fragment">Async rendering on UI thread</li>
             </ul>
           </section>
         </section>
@@ -442,16 +464,20 @@
             <h3>Pors & Cons</h3>
           </section>
           <section>
-            <h4>New server release</h4>
-            <img class="icon" width="900px" data-src="img/calendar-server-dev.jpg">
-          </section>
-          <section>
             <p>Everything we wanted from SSR...</p>
             <ul>
               <li class="fragment">Fast first paint</li>
               <li class="fragment">Easy experiments</li>
               <li class="fragment">Easy gating</li>
             </ul>
+          </section>
+          <section>
+            <h4>Rewind | New client release</h4>
+            <img class="icon" width="900px" data-src="img/calendar-native-dev.jpg">
+          </section>
+          <section>
+            <h4>New server release</h4>
+            <img class="icon" width="900px" data-src="img/calendar-server-dev.jpg">
           </section>
           <section>
             <h4>Testing</h4>
@@ -476,9 +502,8 @@
         </section>
         <section>
           <img class="icon" width="300px" data-src="img/netscape-logo.png">
-          <p>
-            <a href="https://ru.wikipedia.org/wiki/Netscape_Navigator">Netscape?</a>
-          </p>
+          <p>Netscape*</p>
+          <a href="https://wikipedia.org/wiki/Netscape_Navigator">wikipedia.org/wiki/Netscape_Navigator</a>
         </section>
         <section>
           <h3>Is this legal?</h3>
@@ -487,9 +512,9 @@
         <!-- <section>
           <img width="900px" data-src="img/xkcd_standards.jpg">
         </section> -->
-        <!-- <section>
+        <section>
           <img width="600px" data-src="img/new-framework-meme.jpg">
-        </section> -->
+        </section>
         <section>
           <p>Thanks for having me!</p>
         </section>
